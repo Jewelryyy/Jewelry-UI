@@ -60,6 +60,11 @@ header a {
     background-color: var(--color-neutral-light);
 }
 
+.container_sidebar a.selected {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+}
+
 .container_main {
     /* 占据剩余的宽度 */
     flex: 1;

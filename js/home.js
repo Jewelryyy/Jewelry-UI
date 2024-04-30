@@ -4,6 +4,11 @@ var links = document.querySelectorAll('a');
 // 为每个链接添加点击事件监听器
 for (var i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function (event) {
+        // 给链接添加选中样式
+        for (var j = 0; j < links.length; j++) {
+            links[j].classList.remove('selected');
+        }
+        this.classList.add('selected');
         // 获取链接内容
         var component = this.href.split('#').pop();
         // 组建资源路径
