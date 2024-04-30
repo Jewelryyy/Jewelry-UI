@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/input.css" />
+    <link rel="stylesheet" href="../css/select.css" />
+    <link rel="stylesheet" href="../css/inputNumber.css" />
+    <link rel="stylesheet" href="../css/switch.css" />
+    <link rel="stylesheet" href="../css/radio.css" />
+    <link rel="stylesheet" href="../css/checkbox.css" />
+    <link rel="stylesheet" href="../css/colorPicker.css" />
+    <link rel="stylesheet" href="../css/button.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Form</h2>
+        <p>由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据。</p>
+        <br />
+        <h3>典型表单</h3>
+        <p>包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。</p>
+        <div class="form_area">
+            <form class="form">
+                <!-- 输入框 -->
+                <div class="input">
+                    <label>
+                        输入框：
+                        <input type="text" name="input" placeholder="请输入文本">
+                    </label>
+                </div>
+                <br />
+                <!-- 选择器 -->
+                <div class="select">
+                    <label>
+                        选择器：
+                        <select name="options">
+                            <option value="option1">选项1</option>
+                            <option value="option2">选项2</option>
+                            <option value="option3">选项3</option>
+                        </select>
+                    </label>
+                </div>
+                <br />
+                <!-- 计数器 -->
+                <div class="counter">
+                    计数器：
+                    <input type="number" id="count" value="0">
+                </div>
+                <br />
+                <!-- 开关 -->
+                <div class="switch_div">
+                    <label>开关：</label>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <br />
+                <!-- 单选框 -->
+                <div class="radio">
+                    <label>单选框：</label>
+                    <label>
+                        <input type="radio" name="option" value="1">
+                        <span class="custom-radio"></span>
+                        选项1
+                    </label>
+                    <label>
+                        <input type="radio" name="option" value="2">
+                        <span class="custom-radio"></span>
+                        选项2
+                    </label>
+                </div>
+                <br />
+                <!-- 多选框 -->
+                <div class="checkbox">
+                    <label>多选框：</label>
+                    <label>
+                        <input type="checkbox" name="option" value="1">
+                        <span class="custom-checkbox"></span>
+                        选项1
+                    </label>
+                    <label>
+                        <input type="checkbox" name="option" value="2">
+                        <span class="custom-checkbox"></span>
+                        选项2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="option" value="3">
+                        <span class="custom-checkbox"></span>
+                        选项3
+                    </label>
+                </div>
+                <br />
+                <!-- 颜色选择器 -->
+                <div class="colorPicker">
+                    <label>
+                        选择颜色：
+                        <input type="color" name="color">
+                    </label>
+                </div>
+                <br />
+                <!-- 提交按钮 -->
+                <button class="btn primary">提交</button>
+                <!-- 重置按钮 -->
+                <button class="btn secondary">重置</button>
+            </form>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;form class="form"&gt;
+    &lt;!-- 输入框 --&gt;
+    &lt;div class="input"&gt;
+        &lt;label&gt;
+            输入框：
+            &lt;input type="text" name="input" placeholder="请输入文本"&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 选择器 --&gt;
+    &lt;div class="select"&gt;
+        &lt;label&gt;
+            选择器：
+            &lt;select name="options"&gt;
+                &lt;option value="option1"&gt;选项1&lt;/option&gt;
+                &lt;option value="option2"&gt;选项2&lt;/option&gt;
+                &lt;option value="option3"&gt;选项3&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 计数器 --&gt;
+    &lt;div class="counter"&gt;
+        计数器：
+        &lt;input type="number" id="count" value="0"&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 开关 --&gt;
+    &lt;div class="switch_div"&gt;
+        &lt;label&gt;开关：&lt;/label&gt;
+        &lt;label class="switch"&gt;
+            &lt;input type="checkbox"&gt;
+            &lt;span class="slider"&gt;&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 单选框 --&gt;
+    &lt;div class="radio"&gt;
+        &lt;label&gt;单选框：&lt;/label&gt;
+        &lt;label&gt;
+            &lt;input type="radio" name="option" value="1"&gt;
+            &lt;span class="custom-radio"&gt;&lt;/span&gt;
+            选项1
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input type="radio" name="option" value="2"&gt;
+            &lt;span class="custom-radio"&gt;&lt;/span&gt;
+            选项2
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 多选框 --&gt;
+    &lt;div class="checkbox"&gt;
+        &lt;label&gt;多选框：&lt;/label&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="option" value="1"&gt;
+            &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+            选项1
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="option" value="2"&gt;
+            &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+            选项2
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="option" value="3"&gt;
+            &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+            选项3
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 颜色选择器 --&gt;
+    &lt;div class="colorPicker"&gt;
+        &lt;label&gt;
+            选择颜色：
+            &lt;input type="color" name="color"&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;!-- 提交按钮 --&gt;
+    &lt;button class="btn primary"&gt;提交&lt;/button&gt;
+    &lt;!-- 重置按钮 --&gt;
+    &lt;button class="btn secondary"&gt;重置&lt;/button&gt;
+    &lt;br /&gt;
+&lt;/form&gt;
+
+&lt;style&gt;
+/* 输入框*/
+.input input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+.input input[type="text"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.select select {
+    width: 150px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+/* 选择器 */
+.select select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.select select option {
+    color: var(--color-text-secondary);
+    background-color: var(--color-neutral-light);
+}
+
+/* 计数器 */
+.counter input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+.counter input[type="number"]::-webkit-inner-spin-button,
+.counter input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    width: 30px;
+    /* 改变微调按钮的宽度 */
+    height: 30px;
+    /* 改变微调按钮的高度 */
+}
+
+.counter input[type="number"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* 开关 */
+.switch_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 70%;
+    /* 使用百分比单位 */
+    width: 40%;
+    /* 使用百分比单位 */
+    left: 10%;
+    /* 使用百分比单位 */
+    bottom: 15%;
+    /* 使用百分比单位 */
+    background-color: white;
+    transition: .4s;
+}
+
+.switch input:checked+.slider {
+    background-color: var(--color-primary);
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(100%);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* 单选框 */
+.radio {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.radio label:hover {
+    color: var(--color-primary);
+}
+
+.radio label:hover .custom-radio {
+    border-color: var(--color-primary);
+}
+
+.radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-radio {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--color-text-primary);
+    background: transparent;
+}
+
+.custom-radio::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--color-neutral-light);
+    border-radius: 50%;
+}
+
+.radio input[type="radio"]:checked+.custom-radio {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-light);
+    transition: background 0.3s ease;
+}
+
+/* 多选框 */
+.checkbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.checkbox label:hover {
+    color: var(--color-primary);
+}
+
+.checkbox label:hover .custom-checkbox {
+    border-color: var(--color-primary);
+}
+
+.checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 30%;
+    border: 1px solid var(--color-text-primary);
+    background: transparent;
+}
+
+.custom-checkbox::before {
+    content: "\2713";
+    /* Unicode for checkmark symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-neutral-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox input[type="checkbox"]:checked+.custom-checkbox {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-light);
+    transition: background 0.3s ease;
+}
+
+.checkbox input[type="checkbox"]:checked+.custom-checkbox::before {
+    opacity: 1;
+}
+
+/* 颜色选择器 */
+.colorPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.colorPicker input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+}
+
+.colorPicker input[type="color"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+/* 提交按钮 */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.primary {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+}
+
+.btn.primary:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary-hover);
+    text-decoration: none;
+}
+
+.btn.secondary {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary);
+}
+
+.btn.secondary:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary-hover);
+    text-decoration: none;
+}
+&lt;style&gt;
+                </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+.switch_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.switch_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 70%;
+    /* 使用百分比单位 */
+    width: 40%;
+    /* 使用百分比单位 */
+    left: 10%;
+    /* 使用百分比单位 */
+    bottom: 15%;
+    /* 使用百分比单位 */
+    background-color: white;
+    transition: .4s;
+}
+
+.switch input:checked+.slider {
+    background-color: var(--color-primary);
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(100%);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

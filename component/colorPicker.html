@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/colorPicker.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>ColorPicker</h2>
+        <p>用于颜色选择，支持多种格式。</p>
+        <br />
+        <h3>基本用法</h3>
+        <div class="colorPicker_area">
+            <div class="colorPicker">
+                <label>
+                    选择颜色：
+                    <input type="color" name="color">
+                </label>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="colorPicker"&gt;
+    &lt;label&gt;
+        选择颜色：
+        &lt;input type="color" name="color"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.colorPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.colorPicker input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+}
+
+.colorPicker input[type="color"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/pagination.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Pagination</h2>
+        <p>当数据量过多时，使用分页分解数据。</p>
+        <br />
+        <h3>基本用法</h3>
+        <div class="pagination_area">
+            <div class="pagination" id="pagination">
+                <ul class="pagination-list">
+                    <li class="pagination-item"><a href="#" class="before-page" id="prev-button">&lt;</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">1</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">4</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">5</a></li>
+                    <li class="pagination-item"><a href="#" class="next-page" id="next-button">&gt;</a></li>
+                </ul>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="pagination" id="pagination"&gt;
+    &lt;ul class="pagination-list"&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="before-page" id="prev-button"&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="pagination-link"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="pagination-link"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="pagination-link"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="pagination-link"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="pagination-link"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="pagination-item"&gt;&lt;a href="#" class="next-page" id="next-button"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.pagination-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination-item {
+    margin-right: 5px;
+}
+
+.pagination-list a {
+    display: inline-block;
+    padding: 5px 10px;
+    color: var(--color-text-secondary);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.pagination-list a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-table-hover);
+    border-radius: 4px;
+}
+
+.pagination-link.selected {
+    border: var(--color-primary) solid 1px;
+    color: var(--color-primary);
+    border-radius: 4px;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+var pagination = document.getElementById('pagination');
+var paginationLinks = pagination.getElementsByClassName('pagination-link');
+var prevButton = document.getElementById('prev-button');
+var nextButton = document.getElementById('next-button');
+
+for (var i = 0; i &lt; paginationLinks.length; i++) {
+    paginationLinks[i].addEventListener('click', handlePaginationClick);
+}
+
+prevButton.addEventListener('click', handlePrevButtonClick);
+nextButton.addEventListener('click', handleNextButtonClick);
+
+// 处理分页链接的点击事件
+function handlePaginationClick(event) {
+    event.preventDefault();  // 阻止链接的默认行为
+    var clickedLink = event.target;  // 获取被点击的链接
+    updateSelectedLink(clickedLink);  // 更新选中的链接
+}
+
+// 处理 "上一页" 按钮的点击事件
+function handlePrevButtonClick(event) {
+    event.preventDefault();  // 阻止按钮的默认行为
+    var selectedLink = pagination.querySelector('.pagination-link.selected');  // 获取当前选中的链接
+    if (selectedLink) {
+        var prevLink = selectedLink.parentNode.previousElementSibling.querySelector('.pagination-link');  // 获取上一页的链接
+        if (prevLink) {
+            updateSelectedLink(prevLink);  // 更新选中的链接
+        }
+    }
+}
+
+// 处理 "下一页" 按钮的点击事件
+function handleNextButtonClick(event) {
+    event.preventDefault();  // 阻止按钮的默认行为
+    var selectedLink = pagination.querySelector('.pagination-link.selected');  // 获取当前选中的链接
+    if (selectedLink) {
+        var nextLink = selectedLink.parentNode.nextElementSibling.querySelector('.pagination-link');  // 获取下一页的链接
+        if (nextLink) {
+            updateSelectedLink(nextLink);  // 更新选中的链接
+        }
+    }
+}
+
+// 更新选中的链接
+function updateSelectedLink(newSelectedLink) {
+    var selectedLink = pagination.querySelector('.pagination-link.selected');
+    if (selectedLink) {
+        selectedLink.classList.remove('selected');
+    }
+    newSelectedLink.classList.add('selected');
+    // TODO分页逻辑
+}
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+        <h3>更多数据显示</h3>
+        <div class="pagination_area">
+            <div class="page"></div>
+            <!-- <div class="pagination" id="pagination2">
+                <ul class="pagination-list">
+                    <li class="pagination-item"><a href="#" class="before-page" id="prev-button2">&lt;</a></li>
+            </div> -->
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="page"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+.page {
+    display: table;
+}
+
+.page a {
+    text-decoration: none;
+    cursor: default;
+    display: inline-block;
+    color: var(--color-text-secondary);
+    padding: 5px 10px;
+    background-color: transparent;
+    margin-right: 5px;
+}
+
+.page a:not(.disabled):not(.current):hover {
+    color: var(--color-primary);
+    background-color: var(--color-table-hover);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.page a.current {
+    border: var(--color-primary) solid 1px;
+    color: var(--color-primary);
+    border-radius: 4px;
+}
+
+.page a.disabled {
+    color: var(--color-border-medium);
+    cursor: no-drop;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+var select;
+
+function Pagination(obj) {
+    instance = this;
+    this.init(obj);
+    select = document.getElementById('itemsPerPage');
+    if (!select) {
+        // 如果选择器不存在，就添加选择器和事件监听器
+        select = document.createElement('select');
+        select.id = 'itemsPerPage';
+        select.innerHTML = `
+        &lt;option value="10">10条/页&lt;/option>
+        &lt;option value="20">20条/页&lt;/option>
+        &lt;option value="50">50条/页&lt;/option>
+        &lt;option value="100">100条/页&lt;/option>
+    `;
+        select.addEventListener('change', function () {
+            obj.size = this.value;  // 获取选择的值
+            instance.init(obj);
+            // 获取指定的类
+            var container = document.querySelector('.page');
+            // 将选择器添加到指定的类中
+            container.appendChild(select);
+        });
+    }
+    // 获取指定的类
+    var container = document.querySelector('.page');
+    // 将选择器添加到指定的类中
+    container.appendChild(select);
+}
+
+Pagination.prototype = {
+    pages: {
+        pageCount: 10,//页面总数
+        size: 10,//单页面数据量
+        pageNo: 1//当前页
+    },
+    //初始化页面数据,参数:obj
+    init: function (obj) {
+        var pages = this.pages
+        pages.total = obj.total//总数据量
+        obj.pageCount = Math.ceil(obj.total / obj.size)//总页码数
+        pages.container = obj.container//外部容器
+        pages.pageNo = obj.pageNo//当前页
+        pages.pageCount = obj.pageCount//总页码数
+        pages.eleHtml = obj.eleHtml//标签内部值
+        pages.prevPage = obj.prevPage || 'prevPage'//上一页按钮
+        pages.nextPage = obj.nextPage || 'nextPage'//下一页按钮        
+        this.renderPage(pages)
+    },
+    //构建页面,参数:args
+    renderPage(args) {
+        var pageContainer = this.selectEle(args.container)
+        var pageStr = '', start, end
+        //构建左侧点击按钮
+        if (args.pageNo > 1) {
+            pageStr = `<a class="prevPage">&lt;</a>`
+        } else {
+            pageStr = `<a class="disabled">&lt;</a>`
+        }
+        //构建中间页面按钮区域
+        if (args.pageCount &lt; 6) {//当总页码数小于6时
+            for (start = 0; start &lt; args.pageCount; start++) {
+                end = start + 1
+                if (end == args.pageNo) {
+                    pageStr += '<a class="current">' + end + '</a>'
+                } else {
+                    pageStr += '<a>' + end + '</a>'
+                }
+            }
+        } else {//当总页码大于等于6时
+            start = args.pageNo - 1//确认遍历的起始位置为当前页的前一页
+            end = args.pageNo + 1//确认遍历的结束位置为当前页的后一页
+            if (args.pageNo > 2) { pageStr += '<a>' + 1 + '</a>' }//当前页大于2时，将页面1按钮写死
+            else { end = 4 }//当前页小于等于2时，将遍历的结束位置写死为4
+            if (args.pageNo > args.pageCount - 3) { start = args.pageCount - 3 }//当前页为最后四个页面时，将遍历的起始位置写死为倒数第四个页面值
+            if (args.pageNo > 3) { pageStr += '<a>...</a>' }//当前页大于第三个页面时，将省略号按钮展现出来
+            //对中间按钮进行遍历
+            for (; start &lt;= end; start++) {
+                if (start &lt;= args.pageCount && start > 0) {
+                    if (start == args.pageNo) {
+                        pageStr += '<a class="current">' + start + '</a>'
+                    } else {
+                        pageStr += '<a>' + start + '</a>'
+                    }
+                }
+            }
+            if (args.pageNo &lt; args.pageCount - 2) { pageStr += '<a>...</a>' }//当前页面小于倒数第三个页面时，将省略号按钮展现出来
+            if (args.pageNo &lt; args.pageCount - 1) { pageStr += '&lt;a>' + args.pageCount + '&lt;/a>' }//当前页面小于倒数第二个页面，将最后的页面按钮锁死
+        }
+        //构建右侧按钮
+        if (args.pageNo &lt; args.pageCount) {
+            pageStr += `&lt;a class="nextPage">&gt;&lt;/a>`
+        } else {
+            pageStr += `&lt;a class="disabled">&gt;&lt;/a>`
+        }
+
+        pageContainer.innerHTML = pageStr;
+
+        this.switchPage()
+    },
+    //切换页面
+    switchPage() {
+        var pages = this.pages, g = this
+        var aList = this.selectEle(pages.container + " a", true)//获取所有的a标签
+        var current//定义一个当前页的标识
+        //对所有的a标签遍历，绑定点击事件
+        for (i in aList) {
+            if (i &lt; aList.length) {
+                aList[i].addEventListener("click", function () {
+                    var eleHtml = this.innerHTML//定义一个属性值来获取数字按钮
+                    if (this.className == pages.prevPage) {
+                        pages.pageNo > 1 && (pageNo = pages.pageNo - 1)
+                    } else if (this.className == pages.nextPage) {
+                        pages.pageNo &lt; pages.pageCount && (pageNo = pages.pageNo + 1)
+                    } else {
+                        pageNo = parseInt(eleHtml)
+                    }
+                    pageNo && g.gotoPage(pageNo)
+                })
+            }
+        }
+    },
+    //跳转页面,参数:current
+    gotoPage(current) {
+        this.pages.pageNo = current;
+        this.renderPage(this.pages);
+        // 获取指定的类
+        var container = document.querySelector('.page');
+        // 将选择器添加到指定的类中
+        container.appendChild(select);
+    },
+    //获取页面元素
+    selectEle(select, all) {
+        return all ? document.querySelectorAll(select) : document.querySelector(select)
+    }
+}
+var p = new Pagination({
+    container: '.page',
+    size: 10,
+    pageNo: 1,
+    total: 1000
+})
+&lt;/script&gt;
+            </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src=" ../js/pagination.js"></script>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

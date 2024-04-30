@@ -1,0 +1,68 @@
+.pagination_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.pagination-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination-item {
+    margin-right: 5px;
+}
+
+.pagination-list a {
+    display: inline-block;
+    padding: 5px 10px;
+    color: var(--color-text-secondary);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.pagination-list a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-table-hover);
+    border-radius: 4px;
+}
+
+.pagination-link.selected {
+    border: var(--color-primary) solid 1px;
+    color: var(--color-primary);
+    border-radius: 4px;
+}
+
+/* 更多数据*/
+.page {
+    display: table;
+}
+
+.page a {
+    text-decoration: none;
+    cursor: default;
+    display: inline-block;
+    color: var(--color-text-secondary);
+    padding: 5px 10px;
+    background-color: transparent;
+    margin-right: 5px;
+}
+
+.page a:not(.disabled):not(.current):hover {
+    color: var(--color-primary);
+    background-color: var(--color-table-hover);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.page a.current {
+    border: var(--color-primary) solid 1px;
+    color: var(--color-primary);
+    border-radius: 4px;
+}
+
+.page a.disabled {
+    color: var(--color-border-medium);
+    cursor: no-drop;
+}

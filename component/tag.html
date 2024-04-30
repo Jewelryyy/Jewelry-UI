@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/tag.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Tag</h2>
+        <p>用于标记和选择。</p>
+        <br />
+        <h3>基础用法</h3>
+        <div class="tag_area">
+            <span class="tag primary">标签一</span>
+            <span class="tag success">标签二</span>
+            <span class="tag warning">标签三</span>
+            <span class="tag danger">标签四</span>
+            <span class="tag info">标签五</span>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;span class="tag primary"&gt;标签一&lt;/span&gt;
+&lt;span class="tag success"&gt;标签二&lt;/span&gt;
+&lt;span class="tag warning"&gt;标签三&lt;/span&gt;
+&lt;span class="tag danger"&gt;标签四&lt;/span&gt;
+&lt;span class="tag info"&gt;标签五&lt;/span&gt;
+
+&lt;style&gt;
+/* 标签的样式 */
+.tag.primary {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-primary) solid 1px;
+    border-radius: 5px;
+    color: var(--color-primary);
+    font-size: 12px;
+}
+
+.tag.success {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-success) solid 1px;
+    border-radius: 5px;
+    color: var(--color-success);
+    font-size: 12px;
+}
+
+.tag.warning {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-warning) solid 1px;
+    border-radius: 5px;
+    color: var(--color-warning);
+    font-size: 12px;
+}
+
+.tag.danger {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-danger) solid 1px;
+    border-radius: 5px;
+    color: var(--color-danger);
+    font-size: 12px;
+}
+
+.tag.info {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-text-secondary) solid 1px;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+&lt;style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <h3>可移除标签</h3>
+        <div class="tag_area" id="removable">
+            <span class="tag primary">标签一<span class="icon" onclick="this.parentElement.remove()">×</span></span>
+            <span class="tag success">标签二<span class="icon" onclick="this.parentElement.remove()">×</span></span>
+            <span class="tag warning">标签三<span class="icon" onclick="this.parentElement.remove()">×</span></span>
+            <span class="tag danger">标签四<span class="icon" onclick="this.parentElement.remove()">×</span></span>
+            <span class="tag info">标签五<span class="icon" onclick="this.parentElement.remove()">×</span></span>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;span class="tag primary"&gt;标签一&lt;span class="icon" onclick="this.parentElement.remove()"&gt;×&lt;/span&gt;&lt;/span&gt;
+&lt;span class="tag success"&gt;标签二&lt;span class="icon" onclick="this.parentElement.remove()"&gt;×&lt;/span&gt;&lt;/span&gt;
+&lt;span class="tag warning"&gt;标签三&lt;span class="icon" onclick="this.parentElement.remove()"&gt;×&lt;/span&gt;&lt;/span&gt;
+&lt;span class="tag danger"&gt;标签四&lt;span class="icon" onclick="this.parentElement.remove()"&gt;×&lt;/span&gt;&lt;/span&gt;
+&lt;span class="tag info"&gt;标签五&lt;span class="icon" onclick="this.parentElement.remove()"&gt;×&lt;/span&gt;&lt;/span&gt;
+
+&lt;style&gt;
+/* 标签的样式 */
+.tag.primary {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-primary) solid 1px;
+    border-radius: 5px;
+    color: var(--color-primary);
+    font-size: 12px;
+}
+
+.tag.success {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-success) solid 1px;
+    border-radius: 5px;
+    color: var(--color-success);
+    font-size: 12px;
+}
+
+.tag.warning {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-warning) solid 1px;
+    border-radius: 5px;
+    color: var(--color-warning);
+    font-size: 12px;
+}
+
+.tag.danger {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-danger) solid 1px;
+    border-radius: 5px;
+    color: var(--color-danger);
+    font-size: 12px;
+}
+
+.tag.info {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-text-secondary) solid 1px;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.icon {
+    margin-left: 5px;
+    color: #aaa;
+    cursor: pointer;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <h3>动态编辑标签</h3>
+        <div class="tag_area" id="dynamic">
+            <span class="dynamic_tag" contenteditable="true">
+                添加标签 +
+            </span>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="tag_area" id="dynamic">&lt;/div>
+    &lt;span class="dynamic_tag" contenteditable="true"&gt;
+        添加标签 +
+    &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.icon {
+    margin-left: 5px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.dynamic_tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-text-secondary) dashed 1px;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+var dynamicTag = document.querySelector('#dynamic .dynamic_tag');
+
+dynamicTag.addEventListener('click', handleTagClick);
+
+function handleTagClick() {
+    dynamicTag.textContent = '';
+    // 调换监听器
+    dynamicTag.removeEventListener('click', handleTagClick);
+    dynamicTag.addEventListener('keydown', handleTagInput);
+}
+
+function handleTagInput(event) {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+        event.preventDefault();
+        var newTagText = dynamicTag.textContent.trim();
+        if (newTagText !== '') {
+            // 构建新标签
+            var newTag = document.createElement('span');
+            newTag.className = 'tag info';
+            newTag.textContent = newTagText;
+            var closeBtn = document.createElement('span');
+            closeBtn.className = 'icon';
+            closeBtn.textContent = '×';
+            closeBtn.onclick = function () {
+                this.parentElement.remove();
+            };
+            newTag.appendChild(closeBtn);
+
+            dynamicTag.textContent = '添加文本 +';
+            // 失焦操作
+            dynamicTag.blur();
+
+            // 将新标签添加进文档
+            var parent = document.getElementById('dynamic');
+            parent.insertBefore(newTag, dynamicTag); // 将新标签插入到添加按钮前面
+
+            // 重置监听器
+            dynamicTag.removeEventListener('keydown', handleTagInput);
+            dynamicTag.addEventListener('click', handleTagClick);
+        }
+    }
+}
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src="../js/showCode.js"></script>
+    <script src="../js/tag.js"></script>
+</body>
+
+</html>

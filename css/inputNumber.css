@@ -1,0 +1,28 @@
+.counter_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.counter input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+.counter input[type="number"]::-webkit-inner-spin-button,
+.counter input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    width: 30px;
+    /* 改变微调按钮的宽度 */
+    height: 30px;
+    /* 改变微调按钮的高度 */
+}
+
+.counter input[type="number"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}

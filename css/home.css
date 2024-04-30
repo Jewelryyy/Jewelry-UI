@@ -1,0 +1,83 @@
+/* 页眉样式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    /* 使 h2 和 a 垂直居中 */
+    align-items: center;
+    background-color: var(--color-neutral-light);
+    color: var(--color-primary);
+    padding: 1px;
+    /* 修改为sticky，使页眉在滚动到某个位置之前为相对定位，之后为固定定位 */
+    position: sticky;
+    /* 设置页眉距离屏幕顶部的距离为0 */
+    top: 0;
+    /* 设置页眉的宽度为100%，使其占满整个屏幕宽度 */
+    width: 100%;
+    border-bottom: var(--color-border-medium) solid 1px;
+}
+
+header h2 {
+    margin-left: 10%;
+}
+
+header a {
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 20%;
+}
+
+/* 侧边导航栏样式 */
+.container {
+    display: flex;
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+}
+
+.container_sidebar {
+    color: var(--color-neutral-light);
+    width: 250px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.container_sidebar h3 {
+    margin: 10px 0;
+    color: var(--color-text-primary);
+}
+
+.container_sidebar a {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.container_main {
+    /* 占据剩余的宽度 */
+    flex: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+}
+
+.container_main p {
+    color: var(--color-text-secondary);
+}
+
+footer {
+    background-color: var(--color-neutral-light);
+    color: var(--color-primary);
+    text-align: center;
+    /* 设置页脚距离屏幕底部的距离为0 */
+    bottom: 0;
+    /* 设置页脚的宽度为100%，使其占满整个屏幕宽度 */
+    width: 100%;
+    border-top: var(--color-border-medium) solid 1px;
+}
+
+footer div {
+    text-align: center;
+}

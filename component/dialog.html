@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/dialog.css" />
+    <link rel="stylesheet" href="../css/button.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Dialog</h2>
+        <p>在保留当前页面状态的情况下，告知用户并承载相关操作。</p>
+        <br />
+        <h3>基础用法</h3>
+        <p>Dialog 弹出一个对话框，适合需要定制性更大的场景。</p>
+        <div class="dialog_area">
+            <!-- 触发对话框的按钮 -->
+            <button id="openDialog" class="btn primary">打开对话框</button>
+
+            <!-- 对话框 -->
+            <div id="dialog" class="dialog hidden">
+                <div class="dialog-content">
+                    <h2 class="dialog-title">标题</h1>
+                        <p class="dialog-text">这是一段内容</p>
+                        <p class="dialog-text">这是一段内容</p>
+                        <p class="dialog-text">这是一段内容</p>
+                        <div class="dialog-buttons">
+                            <button id="confirm" class="btn primary">确定</button>
+                            <button id="cancel" class="btn secondary">取消</button>
+                        </div>
+                </div>
+            </div>
+
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="dialog_area"&gt;
+    &lt;button id="openDialog" class="btn primary"&gt;打开对话框&lt;/button&gt;
+
+    &lt;div id="dialog" class="dialog hidden"&gt;
+        &lt;div class="dialog-content"&gt;
+            &lt;h2 class="dialog-title"&gt;标题&lt;/h1&gt;
+            &lt;p class="dialog-text"&gt;这是一段内容&lt;/p&gt;
+            &lt;p class="dialog-text"&gt;这是一段内容&lt;/p&gt;
+            &lt;p class="dialog-text"&gt;这是一段内容&lt;/p&gt;
+            &lt;div class="dialog-buttons"&gt;
+                &lt;button id="confirm" class="btn primary"&gt;确定&lt;/button&gt;
+                &lt;button id="cancel" class="btn secondary"&gt;取消&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dialog-buttons button {
+    margin-left: 10px;
+}
+
+.hidden {
+    display: none;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+document.getElementById('openDialog').addEventListener('click', function () {
+    document.getElementById('dialog').classList.remove('hidden');
+});
+
+document.getElementById('confirm').addEventListener('click', function () {
+    document.getElementById('dialog').classList.add('hidden');
+});
+
+document.getElementById('cancel').addEventListener('click', function () {
+    document.getElementById('dialog').classList.add('hidden');
+});
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

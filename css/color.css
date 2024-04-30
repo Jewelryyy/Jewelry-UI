@@ -1,0 +1,60 @@
+.component box {
+    display: flex;
+    width: 20%;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.box_container {
+    display: flex;
+    flex-direction: row;
+    /* 使 box 之间有一些空间 */
+    justify-content: space-between;
+}
+
+.primary_color {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+}
+
+.success_color {
+    color: var(--color-neutral-light);
+    background-color: var(--color-success);
+}
+
+.warning_color {
+    color: var(--color-neutral-light);
+    background-color: var(--color-warning);
+}
+
+.danger_color {
+    color: var(--color-neutral-light);
+    background-color: var(--color-danger);
+}
+
+.info_color {
+    color: var(--color-neutral-light);
+    background-color: var(--color-text-secondary);
+}
+
+.primary_text {
+    color: var(--color-neutral-light);
+    background-color: var(--color-text-primary);
+}
+
+.secondary_text {
+    color: var(--color-neutral-light);
+    background-color: var(--color-text-secondary);
+}
+
+.border_color {
+    color: var(--color-neutral-light);
+    background-color: var(--color-border-medium);
+}
+
+.basic_white {
+    color: var(--color-text-primary);
+    background-color: var(--color-neutral-light);
+}

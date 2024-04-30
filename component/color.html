@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/color.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="component">
+        <h2>Color 色彩</h2>
+        <p>Jewelry-UI使用的一套主题色彩</p>
+        <pre><code>
+/* 全局颜色*/
+--color-primary: #00717d;
+--color-primary-hover: #199fb0;
+--color-success: #10bb57;
+--color-warning: #FF9800;
+--color-danger: #ff3c00;
+--color-text-primary: #000000;
+--color-text-secondary: #545454;
+--color-neutral-light: #F5F5F5;
+--color-neutral-dark: #333333;
+--color-border-medium: #999999;
+        </code></pre>
+        <h3>主色</h3>
+        <p>Jewelry-UI使用的主色彩</p>
+        <box class="primary_color">主色 #00717d</box>
+        <br />
+        <h3>辅助色</h3>
+        <p>除了主色外的场景色，需要在不同的场景中使用（例如危险色表示危险的操作）。</p>
+        <div class="box_container">
+            <box class="success_color">成功 #10bb57</box>
+            <box class="warning_color">警告 #FF9800</box>
+            <box class="danger_color">危险 #ff3c00</box>
+            <box class="info_color">信息 #545454</box>
+        </div>
+        <br />
+        <h3>中性色</h3>
+        <p>中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。</p>
+        <div class="box_container">
+            <box class="primary_text">主要文字 #000000</box>
+            <box class="secondary_text">次要文字 #545454</box>
+            <box class="border_color">边框颜色 #999999</box>
+            <box class="basic_white">基础白色 #F5F5F5</box>
+        </div>
+        <br />
+        <br />
+    </main>
+</body>
+
+</html>

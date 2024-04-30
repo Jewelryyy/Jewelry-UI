@@ -1,0 +1,22 @@
+.colorPicker_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.colorPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.colorPicker input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+}
+
+.colorPicker input[type="color"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}

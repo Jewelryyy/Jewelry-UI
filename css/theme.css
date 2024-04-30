@@ -1,0 +1,38 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* 全局颜色*/
+    --color-primary: #00717d;
+    --color-primary-hover: #199fb0;
+    --color-success: #10bb57;
+    --color-warning: #FF9800;
+    --color-danger: #ff3c00;
+    --color-text-primary: #000000;
+    --color-text-secondary: #545454;
+    --color-neutral-light: #F5F5F5;
+    --color-neutral-dark: #333333;
+    --color-border-medium: #999999;
+    --color-table-hover: rgb(235, 235, 235);
+}
+
+.code_area {
+    height: 50vh;
+    padding-left: 20px;
+    overflow: auto;
+    display: none;
+}
+
+.show_code {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.show_code:hover {
+    color: var(--color-primary);
+}

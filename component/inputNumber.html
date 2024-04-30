@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/inputNumber.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>InputNumber</h2>
+        <p>仅允许输入标准的数字值，可定义范围。</p>
+        <br />
+        <h3>基本用法</h3>
+        <div class="counter_area">
+            <div class="counter">
+                计数器：
+                <input type="number" id="count" value="0">
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;input type="number" id="count" value="0"&gt;
+&lt;div class="counter"&gt;
+    计数器：
+    &lt;input type="number" id="count" value="0"&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.counter input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+}
+
+.counter input[type="number"]::-webkit-inner-spin-button,
+.counter input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    width: 30px;
+    /* 改变微调按钮的宽度 */
+    height: 30px;
+    /* 改变微调按钮的高度 */
+}
+
+.counter input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/carousel.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Carousel</h2>
+        <p>在有限空间内，循环播放同一类型的图片、卡片等内容。</p>
+        <br />
+        <h3>基本用法</h3>
+        <p>使用时请设置图片的路径。</p>
+        <div class="carousel_area">
+            <div class="carousel">
+                <div class="carousel_list">
+                    <div class="carousel_item">
+                        <img src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg" alt="1"
+                            onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.width='200px'; this.style.height='200px';" />
+                    </div>
+                    <div class="carousel_item">
+                        <img src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg" alt="2"
+                            onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.width='200px'; this.style.height='200px';" />
+                    </div>
+                    <div class="carousel_item">
+                        <img src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg" alt="3"
+                            onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.width='200px'; this.style.height='200px';" />
+                    </div>
+                </div>
+                <div class="carousel_control">
+                    <a href="javascript:void(0)" class="prev">&lt;</a>
+                    <a href="javascript:void(0)" class="next">&gt;</a>
+                </div>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="carousel"&gt;
+    &lt;div class="carousel_list"&gt;
+        &lt;div class="carousel_item"&gt;
+            &lt;img src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg" alt="1"
+                onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.width='200px';
+                this.style.height='200px';" /&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel_item"&gt;
+            &lt;img src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg" alt="2"
+                onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.width='200px';
+                this.style.height='200px';" /&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel_item"&gt;
+            &lt;img src="https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg" alt="3"
+                onerror="this.onerror=null; this.style.backgroundColor='#f0f0f0'; this.style.width='200px';
+                this.style.height='200px';" /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel_control"&gt;
+        &lt;a href="javascript:void(0)" class="prev"&gt;&lt;/a&gt;
+        &lt;a href="javascript:void(0)" class="next"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    background-color: #f0f0f0;
+}
+
+.carousel_list {
+    display: flex;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel_item {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.carousel_item img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel:hover .carousel_control {
+    opacity: 1;
+}
+
+.carousel_control {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel_control a {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.carousel_control .prev {
+    left: 10px;
+}
+
+.carousel_control .next {
+    right: 10px;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+var carousel = document.querySelector('.carousel');
+var carouselList = carousel.querySelector('.carousel_list');
+var carouselItems = carousel.querySelectorAll('.carousel_item');
+var prevButton = carousel.querySelector('.prev');
+var nextButton = carousel.querySelector('.next');
+
+var currentIndex = 0;
+
+prevButton.addEventListener('click', function () {
+    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    updateCarousel();
+});
+
+nextButton.addEventListener('click', function () {
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    var offset = -currentIndex * carousel.offsetWidth;
+    carouselList.style.transform = 'translateX(' + offset + 'px)';
+}
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+    </main>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

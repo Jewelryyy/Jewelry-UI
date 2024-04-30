@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/tree.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Tree</h2>
+        <p>用清晰的层级结构展示信息，可展开或折叠。</p>
+        <br />
+        <h3>示例</h3>
+        <div class="tree_area">
+            <div id="tree" class="tree">
+                <ul>
+                    <li>
+                        <span class="tree-node">Node 1</span>
+                        <ul>
+                            <li>
+                                <span class="tree-node">Node 1.1</span>
+                            </li>
+                            <li>
+                                <span class="tree-node">Node 1.2</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="tree-node">Node 2</span>
+                    </li>
+                    <li>
+                        <span class="tree-node">Node 3</span>
+                        <ul>
+                            <li>
+                                <span class="tree-node">Node 3.1</span>
+                                <ul>
+                                    <li>
+                                        <span class="tree-node">Node 3.1.1</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div id="tree" class="tree"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;span class="tree-node"&gt;Node 1&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;span class="tree-node"&gt;Node 1.1&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;span class="tree-node"&gt;Node 1.2&lt;/span&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="tree-node"&gt;Node 2&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="tree-node"&gt;Node 3&lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;span class="tree-node"&gt;Node 3.1&lt;/span&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;span class="tree-node"&gt;Node 3.1.1&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.tree-node {
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.tree-node:hover {
+    color: var(--color-primary);
+}
+
+.tree-node:before {
+    content: "\25B6";
+    color: var(--color-border-medium);
+    display: inline-block;
+    margin-right: 5px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tree-node.collapsed:before {
+    transform: rotate(0deg);
+}
+
+.tree-node.no-children:before {
+    content: "\25B6";
+    display: inline-block;
+    visibility: hidden;
+}
+
+.tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree ul ul {
+    margin-left: 20px;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+// 获取所有的树节点
+var treeNodes = document.querySelectorAll('.tree-node');
+// 遍历每个树节点
+treeNodes.forEach(function (node) {
+    // 获取当前树节点的下一个兄弟元素
+    var children = node.nextElementSibling;
+    // 默认折叠所有的树节点
+    node.classList.add('collapsed');
+    // 如果下一个兄弟元素存在且是一个 ul 元素（即子树）
+    if (children && children.tagName === 'UL') {
+        // 隐藏子树
+        children.style.display = 'none';
+    } else {
+        // 如果没有子树，给当前树节点添加 no-children 类
+        node.classList.add('no-children');
+    }
+});
+
+// 获取树的容器元素，添加点击事件监听器
+var treeArea = document.querySelector('.tree');
+treeArea.addEventListener('click', function (event) {
+    // 如果点击的是一个 span 元素（即树节点的文本）
+    if (event.target.tagName === 'SPAN') {
+        // 获取被点击的树节点
+        var node = event.target;
+        // 获取被点击的树节点的下一个兄弟元素
+        var children = event.target.nextElementSibling;
+        // 如果下一个兄弟元素存在且是一个 ul 元素（即子树）
+        if (children && children.tagName === 'UL') {
+            var isCollapsed = children.style.display === 'none';
+            children.style.display = isCollapsed ? '' : 'none';
+            // 如果子树被展开
+            if (isCollapsed) {
+                // 移除 collapsed 类，表示树节点已展开
+                node.classList.remove('collapsed');
+            } else {
+                // 添加 collapsed 类，表示树节点已折叠
+                node.classList.add('collapsed');
+            }
+        }
+    }
+});
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>树形下拉框</h3>
+        <div class="tree_area">
+            <div class="custom-select">
+                <div class="selected-option">请选择...</div>
+                <div id="tree_pull" class="tree_pull">
+                    <ul>
+                        <li>
+                            <span class="tree-node">Node 1</span>
+                            <ul>
+                                <li>
+                                    <span class="tree-node">Node 1.1</span>
+                                </li>
+                                <li>
+                                    <span class="tree-node">Node 1.2</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="tree-node">Node 2</span>
+                        </li>
+                        <li>
+                            <span class="tree-node">Node 3</span>
+                            <ul>
+                                <li>
+                                    <span class="tree-node">Node 3.1</span>
+                                    <ul>
+                                        <li>
+                                            <span class="tree-node">Node 3.1.1</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="custom-select"&gt;
+    &lt;div class="selected-option"&gt;请选择...&lt;/div&gt;
+    &lt;div id="tree_pull" class="tree_pull"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;span class="tree-node"&gt;Node 1&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;span class="tree-node"&gt;Node 1.1&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;span class="tree-node"&gt;Node 1.2&lt;/span&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;span class="tree-node"&gt;Node 2&lt;/span&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;span class="tree-node"&gt;Node 3&lt;/span&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;span class="tree-node"&gt;Node 3.1&lt;/span&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;
+                                &lt;span class="tree-node"&gt;Node 3.1.1&lt;/span&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;                
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+/* 树形下拉框*/
+.custom-select {
+    position: relative;
+    width: 250px;
+}
+
+.selected-option {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.selected-option:hover {
+    border-color: var(--color-primary-hover);
+    box-shadow: 0 0 5px var(--color-primary-hover);
+    color: var(--color-primary);
+}
+
+.selected-option::after {
+    content: '';
+    border: solid var(--color-text-secondary);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+    right: 15px;
+    top: 45%;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: 50% 50%;
+}
+
+.selected-option.rotated::after {
+    transform: rotate(225deg);
+}
+
+.tree_pull {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #fff;
+    z-index: 1;
+}
+
+.tree_pull ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree_pull ul ul {
+    margin-left: 20px;
+}
+
+.custom-select.open .tree_pull {
+    display: block;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+//树形下拉框
+document.querySelector('.custom-select').addEventListener('click', function () {
+    this.classList.toggle('open');
+    document.querySelector('.selected-option').classList.toggle('rotated');
+});
+
+document.querySelectorAll('.tree_pull .tree-node').forEach(function (node) {
+    node.addEventListener('click', function (event) {
+        event.stopPropagation();
+        // 获取被点击的节点的下一个兄弟元素
+        var children = this.nextElementSibling;
+        // 如果下一个兄弟元素存在且是一个 ul 元素（即子树）
+        if (children && children.tagName === 'UL') {
+            var isCollapsed = children.style.display === 'none';
+            children.style.display = isCollapsed ? '' : 'none';
+            // 如果子树被展开
+            if (isCollapsed) {
+                // 移除 collapsed 类，表示树节点已展开
+                this.classList.remove('collapsed');
+            } else {
+                // 添加 collapsed 类，表示树节点已折叠
+                this.classList.add('collapsed');
+            }
+        } else {
+            // 如果没有子树，将节点的文本内容赋给 .custom-select
+            var selectedOption = this.closest('.custom-select').querySelector('.selected-option');
+            selectedOption.textContent = this.textContent;
+            // 移除 open 类
+            this.closest('.custom-select').classList.remove('open');
+            document.querySelector('.selected-option').classList.toggle('rotated');
+        }
+    });
+});
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>树形选择框</h3>
+        <div class="tree_area">
+            <div id="tree_select" class="tree_select">
+                <ul>
+                    <li>
+                        <span class="tree-select-node">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Node 1
+                        </span>
+                        <ul>
+                            <li>
+                                <span class="tree-select-node">
+                                    <input type="checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    Node 1.1
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tree-select-node">
+                                    <input type="checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    Node 1.2
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="tree-select-node">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Node 2
+                        </span>
+                    </li>
+                    <li>
+                        <span class="tree-select-node">
+                            <input type="checkbox">
+                            <span class="custom-checkbox"></span>
+                            Node 3
+                        </span>
+                        <ul>
+                            <li>
+                                <span class="tree-select-node">
+                                    <input type="checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    Node 3.1
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span class="tree-select-node">
+                                            <input type="checkbox">
+                                            <span class="custom-checkbox"></span>
+                                            Node 3.1.1
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div id="tree_select" class="tree_select"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;span class="tree-select-node"&gt;
+                &lt;input type="checkbox"&gt;
+                &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                Node 1
+            &lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;span class="tree-select-node"&gt;
+                        &lt;input type="checkbox"&gt;
+                        &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                        Node 1.1
+                    &lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;span class="tree-select-node"&gt;
+                        &lt;input type="checkbox"&gt;
+                        &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                        Node 1.2
+                    &lt;/span&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="tree-select-node"&gt;
+                &lt;input type="checkbox"&gt;
+                &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                Node 2
+            &lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;span class="tree-select-node"&gt;
+                &lt;input type="checkbox"&gt;
+                &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                Node 3
+            &lt;/span&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;span class="tree-select-node"&gt;
+                        &lt;input type="checkbox"&gt;
+                        &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                        Node 3.1
+                    &lt;/span&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;span class="tree-select-node"&gt;
+                                &lt;input type="checkbox"&gt;
+                                &lt;span class="custom-checkbox"&gt;&lt;/span&gt;
+                                Node 3.1.1
+                            &lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+/* 树形选择器*/
+.tree_select ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree_select ul ul {
+    margin-left: 20px;
+}
+
+.tree-select-node {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.tree-select-node:hover {
+    color: var(--color-primary);
+}
+
+.tree-select-node:hover .custom-checkbox {
+    border-color: var(--color-primary);
+}
+
+.tree-select-node:before {
+    content: "\25B6";
+    color: var(--color-border-medium);
+    display: inline-block;
+    margin-right: 5px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tree-select-node.collapsed:before {
+    transform: rotate(0deg);
+}
+
+.tree-select-node.no-children:before {
+    content: "\25B6";
+    display: inline-block;
+    visibility: hidden;
+}
+
+.tree-select-node input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 30%;
+    border: 1px solid var(--color-text-primary);
+    background: transparent;
+}
+
+.custom-checkbox::before {
+    content: "\2713";
+    /* Unicode for checkmark symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-neutral-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tree-select-node input[type="checkbox"]:checked+.custom-checkbox {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-light);
+    transition: background 0.3s ease;
+}
+
+.tree-select-node input[type="checkbox"]:checked+.custom-checkbox::before {
+    opacity: 1;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+// 树形选择器
+document.querySelectorAll('.custom-checkbox').forEach(function (span) {
+    span.addEventListener('click', function () {
+        var checkbox = this.previousElementSibling;
+        checkbox.checked = !checkbox.checked;
+        // 手动触发 change 事件
+        var event = new Event('change');
+        checkbox.dispatchEvent(event);
+    });
+});
+
+document.querySelectorAll('.tree-select-node input[type="checkbox"]').forEach(function (node) {
+    node.addEventListener('change', function () {
+        var children = this.parentNode.nextElementSibling;
+        if (children) {
+            children.querySelectorAll('input[type="checkbox"]').forEach(function (child) {
+                child.checked = node.checked;
+            });
+        }
+    });
+});
+
+// 获取所有的树节点
+var treeNodes = document.querySelectorAll('.tree-select-node');
+// 遍历每个树节点
+treeNodes.forEach(function (node) {
+    // 获取当前树节点的下一个兄弟元素
+    var children = node.nextElementSibling;
+    // 默认折叠所有的树节点
+    node.classList.add('collapsed');
+    // 如果下一个兄弟元素存在且是一个 ul 元素（即子树）
+    if (children && children.tagName === 'UL') {
+        // 隐藏子树
+        children.style.display = 'none';
+    } else {
+        // 如果没有子树，给当前树节点添加 no-children 类
+        node.classList.add('no-children');
+    }
+});
+
+// 获取树的容器元素，添加点击事件监听器
+var treeArea = document.querySelector('.tree_select');
+treeArea.addEventListener('click', function (event) {
+    // 如果点击的是一个 span 元素（即树节点的文本）
+    if (event.target.tagName === 'SPAN') {
+        // 获取被点击的树节点
+        var node = event.target;
+        // 获取被点击的树节点的下一个兄弟元素
+        var children = event.target.nextElementSibling;
+        // 如果下一个兄弟元素存在且是一个 ul 元素（即子树）
+        if (children && children.tagName === 'UL') {
+            var isCollapsed = children.style.display === 'none';
+            children.style.display = isCollapsed ? '' : 'none';
+            // 如果子树被展开
+            if (isCollapsed) {
+                // 移除 collapsed 类，表示树节点已展开
+                node.classList.remove('collapsed');
+            } else {
+                // 添加 collapsed 类，表示树节点已折叠
+                node.classList.add('collapsed');
+            }
+        }
+    }
+});
+&lt;/script&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+    </main>
+    <script src="../js/tree.js"></script>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

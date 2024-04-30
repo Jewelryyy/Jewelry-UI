@@ -1,0 +1,73 @@
+.tag_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+/* 标签的样式 */
+.tag.primary {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-primary) solid 1px;
+    border-radius: 5px;
+    color: var(--color-primary);
+    font-size: 12px;
+}
+
+.tag.success {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-success) solid 1px;
+    border-radius: 5px;
+    color: var(--color-success);
+    font-size: 12px;
+}
+
+.tag.warning {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-warning) solid 1px;
+    border-radius: 5px;
+    color: var(--color-warning);
+    font-size: 12px;
+}
+
+.tag.danger {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-danger) solid 1px;
+    border-radius: 5px;
+    color: var(--color-danger);
+    font-size: 12px;
+}
+
+.tag.info {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-text-secondary) solid 1px;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.icon {
+    margin-left: 5px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.dynamic_tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: var(--color-text-secondary) dashed 1px;
+    border-radius: 5px;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+}

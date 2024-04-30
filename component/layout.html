@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="component">
+        <h2>Layout 布局</h2>
+        <p>Layout 布局组件，用于页面整体布局。</p>
+        <p>！！！该组件采用了 flex 布局，使用前请确定目标浏览器是否兼容。</p>
+        <br />
+        <h3>常见页面布局</h3>
+        <div class="layout_without_aside">
+            <header class="layout_header">Header</header>
+            <main class="layout_main">Main</main>
+            <footer class="layout_footer">Footer</footer>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;header class="layout_header"&gt;Header&lt;/header&gt;
+&lt;main class="layout_main"&gt;Main&lt;/main&gt;
+&lt;footer class="layout_footer"&gt;Footer&lt;/footer&gt;
+
+&lt;style&gt;
+.layout_header {
+    /* 使内容居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    /* 设置页眉距离屏幕顶部的距离为0 */
+    top: 0;
+    /* 设置页眉的宽度为100%，使其占满整个屏幕宽度 */
+    width: 100%;
+    height: 10vh;
+}
+
+.layout_main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 141, 187);
+    color: #F5F5F5;
+    height: 20vh;
+}
+
+.layout_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    width: 100%;
+    height: 10vh;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <div class="layout_aside_left">
+            <header class="layout_header">Header</header>
+            <div class="layout_content">
+                <aside class="layout_aside">Aside</aside>
+                <main class="layout_main">Main</main>
+            </div>
+            <footer class="layout_footer">Footer</footer>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;header class="layout_header"&gt;Header&lt;/header&gt;
+&lt;div class="layout_content"&gt;
+  &lt;aside class="layout_aside"&gt;Aside&lt;/aside&gt;
+  &lt;main class="layout_main"&gt;Main&lt;/main&gt;
+&lt;/div&gt;
+&lt;footer class="layout_footer"&gt;Footer&lt;/footer&gt;
+
+&lt;style&gt;
+.layout_header {
+    /* 使内容居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    /* 设置页眉距离屏幕顶部的距离为0 */
+    top: 0;
+    /* 设置页眉的宽度为100%，使其占满整个屏幕宽度 */
+    width: 100%;
+    height: 10vh;
+}
+
+.layout_content {
+    display: flex;
+    height: 20vh;
+}
+
+.layout_content>.layout_aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005c8e;
+    color: #F5F5F5;
+    width: 250px;
+}
+
+.layout_content>.layout_main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 141, 187);
+    color: #F5F5F5;
+}
+
+.layout_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    width: 100%;
+    height: 10vh;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <div class="layout_aside_right">
+            <header class="layout_header">Header</header>
+            <div class="layout_content">
+                <main class="layout_main">Main</main>
+                <aside class="layout_aside">Aside</aside>
+            </div>
+            <footer class="layout_footer">Footer</footer>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;header class="layout_header"&gt;Header&lt;/header&gt;
+&lt;div class="layout_content"&gt;
+    &lt;main class="layout_main"&gt;Main&lt;/main&gt;
+    &lt;aside class="layout_aside"&gt;Aside&lt;/aside&gt;
+&lt;/div&gt;
+&lt;footer class="layout_footer"&gt;Footer&lt;/footer&gt;
+
+&lt;style&gt;
+.layout_header {
+    /* 使内容居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    /* 设置页眉距离屏幕顶部的距离为0 */
+    top: 0;
+    /* 设置页眉的宽度为100%，使其占满整个屏幕宽度 */
+    width: 100%;
+    height: 10vh;
+}
+
+.layout_content {
+    display: flex;
+    height: 20vh;
+}
+
+.layout_content>.layout_aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005c8e;
+    color: #F5F5F5;
+    width: 250px;
+}
+
+.layout_content>.layout_main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 141, 187);
+    color: #F5F5F5;
+}
+
+.layout_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    width: 100%;
+    height: 10vh;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <div class="layout_all">
+            <div class="layout_aside_left_all">
+                <aside class="layout_aside">Aside</aside>
+                <div class="layout_content">
+                    <header class="layout_header">Header</header>
+                    <main class="layout_main">Main</main>
+                    <footer class="layout_footer">Footer</footer>
+                </div>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="layout_aside_left_all"&gt;
+    &lt;aside class="layout_aside"&gt;Aside&lt;/aside&gt;
+    &lt;div class="layout_content"&gt;
+    &lt;header class="layout_header"&gt;Header&lt;/header&gt;
+    &lt;main class="layout_main"&gt;Main&lt;/main&gt;
+    &lt;footer class="layout_footer"&gt;Footer&lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.layout_aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005c8e;
+    color: #F5F5F5;
+    width: 250px;
+}
+
+.layout_content {
+    flex: 1;
+}
+
+.layout_content>.layout_header {
+    /* 使内容居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    /* 设置页眉距离屏幕顶部的距离为0 */
+    top: 0;
+    /* 设置页眉的宽度为100%，使其占满整个屏幕宽度 */
+    width: 100%;
+    height: 10vh;
+}
+
+.layout_content>.layout_main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 141, 187);
+    color: #F5F5F5;
+    height: 20vh;
+}
+
+.layout_content>.layout_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00717d;
+    color: #F5F5F5;
+    width: 100%;
+    height: 10vh;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

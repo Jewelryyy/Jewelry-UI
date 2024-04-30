@@ -1,0 +1,191 @@
+.tree_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.tree-node {
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.tree-node:hover {
+    color: var(--color-primary);
+    background-color: var(--color-table-hover);
+}
+
+.tree-node:before {
+    content: "\25B6";
+    color: var(--color-border-medium);
+    display: inline-block;
+    margin-right: 5px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tree-node.collapsed:before {
+    transform: rotate(0deg);
+}
+
+.tree-node.no-children:before {
+    content: "\25B6";
+    display: inline-block;
+    visibility: hidden;
+}
+
+.tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree ul ul {
+    margin-left: 20px;
+}
+
+
+/* 树形选择器*/
+.tree_select ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree_select ul ul {
+    margin-left: 20px;
+}
+
+.tree-select-node {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.tree-select-node:hover {
+    color: var(--color-primary);
+}
+
+.tree-select-node:hover .custom-checkbox {
+    border-color: var(--color-primary);
+}
+
+.tree-select-node:before {
+    content: "\25B6";
+    color: var(--color-border-medium);
+    display: inline-block;
+    margin-right: 5px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tree-select-node.collapsed:before {
+    transform: rotate(0deg);
+}
+
+.tree-select-node.no-children:before {
+    content: "\25B6";
+    display: inline-block;
+    visibility: hidden;
+}
+
+.tree-select-node input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 30%;
+    border: 1px solid var(--color-text-primary);
+    background: transparent;
+}
+
+.custom-checkbox::before {
+    content: "\2713";
+    /* Unicode for checkmark symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-neutral-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tree-select-node input[type="checkbox"]:checked+.custom-checkbox {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-light);
+    transition: background 0.3s ease;
+}
+
+.tree-select-node input[type="checkbox"]:checked+.custom-checkbox::before {
+    opacity: 1;
+}
+
+
+/* 树形下拉框*/
+.custom-select {
+    position: relative;
+    width: 250px;
+}
+
+.selected-option {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.selected-option:hover {
+    border-color: var(--color-primary-hover);
+    box-shadow: 0 0 5px var(--color-primary-hover);
+    color: var(--color-primary);
+}
+
+.selected-option::after {
+    content: '';
+    border: solid var(--color-text-secondary);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+    right: 15px;
+    top: 45%;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: 50% 50%;
+}
+
+.selected-option.rotated::after {
+    transform: rotate(225deg);
+}
+
+.tree_pull {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #fff;
+    z-index: 1;
+}
+
+.tree_pull ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.tree_pull ul ul {
+    margin-left: 20px;
+}
+
+.custom-select.open .tree_pull {
+    display: block;
+}

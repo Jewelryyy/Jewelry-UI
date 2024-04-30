@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/input.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Input</h2>
+        <p>通过鼠标或键盘输入字符。</p>
+        <br />
+        <h3>基本用法</h3>
+        <div class="input_area">
+            <div class="input">
+                <label>
+                    输入框：
+                    <input type="text" name="input" placeholder="请输入文本">
+                </label>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="input"&gt;
+    &lt;label&gt;
+        输入框：
+        &lt;input type="text" name="input" placeholder="请输入文本"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.input input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+.input input[type="text"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>禁用状态</h3>
+        <div class="input_area">
+            <div class="input">
+                <label>
+                    输入框：
+                    <input type="text" name="input" disabled>
+                </label>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="input"&gt;
+    &lt;label&gt;
+        输入框：
+        &lt;input type="text" name="input" disabled&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

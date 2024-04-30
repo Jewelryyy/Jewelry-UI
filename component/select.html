@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/select.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Select</h2>
+        <p>当选项过多时，使用下拉菜单展示并选择内容。</p>
+        <br />
+        <h3>基本用法</h3>
+        <div class="select_area">
+            <div class="select">
+                <label>
+                    选择器：
+                    <select name="options">
+                        <option value="option1">选项1</option>
+                        <option value="option2">选项2</option>
+                        <option value="option3">选项3</option>
+                    </select>
+                </label>
+            </div>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;div class="select"&gt;
+    &lt;label&gt;
+        选择器：
+        &lt;select name="options"&gt;
+            &lt;option value="option1"&gt;选项1&lt;/option&gt;
+            &lt;option value="option2"&gt;选项2&lt;/option&gt;
+            &lt;option value="option3"&gt;选项3&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.select select {
+    width: 150px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+.select select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.select select option {
+    color: var(--color-text-secondary);
+    background-color: var(--color-neutral-light);
+}
+&lt;style&gt;
+</code></pre>
+            </div>
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>

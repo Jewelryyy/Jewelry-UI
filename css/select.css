@@ -1,0 +1,24 @@
+.select_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.select select {
+    width: 150px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 4px;
+    outline: none;
+}
+
+.select select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.select select option {
+    color: var(--color-text-secondary);
+    background-color: var(--color-neutral-light);
+}

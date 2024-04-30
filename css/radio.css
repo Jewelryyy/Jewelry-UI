@@ -1,0 +1,60 @@
+.radio_area {
+    margin: 0;
+    padding: 20px;
+    border: var(--color-border-medium) solid 1px;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.radio label:hover {
+    color: var(--color-primary);
+}
+
+.radio label:hover .custom-radio {
+    border-color: var(--color-primary);
+}
+
+.radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-radio {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--color-text-primary);
+    background: transparent;
+}
+
+.custom-radio::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--color-neutral-light);
+    border-radius: 50%;
+}
+
+.radio input[type="radio"]:checked+.custom-radio {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-neutral-light);
+    transition: background 0.3s ease;
+}

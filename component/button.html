@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry-UI</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/button.css" />
+</head>
+
+<body>
+    <!-- 组件内容部分 -->
+    <main class="container_main">
+        <h2>Button</h2>
+        <p>常用的操作按钮。</p>
+        <br />
+        <h3>主按钮</h3>
+        <p>以主题色为背景色的按钮。</p>
+        <div class="button_area">
+            <button class="btn primary">主按钮</button>
+            <br />
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn primary"&gt;主按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.primary {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+}
+
+.btn.primary:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary-hover);
+    text-decoration: none;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>次按钮</h3>
+        <p>以主题色为边框颜色和字体颜色的按钮。</p>
+        <div class="button_area">
+            <button class="btn secondary">次按钮</button>
+            <br />
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn secondary"&gt;次按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.secondary {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary);
+}
+
+.btn.secondary:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+    text-decoration: none;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>虚线按钮</h3>
+        <p>边框为虚线的按钮，没有背景色。</p>
+        <div class="button_area">
+            <button class="btn dashed">虚线按钮</button>
+            <br />
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn dashed"&gt;虚线按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.dashed {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary);
+    border-style: dashed;
+}
+
+.btn.dashed:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+    text-decoration: none;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>文本按钮</h3>
+        <p>没有边框和背景色的按钮。</p>
+        <div class="button_area">
+            <button class="btn text">文本按钮</button>
+            <br />
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn text"&gt;文本按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.text {
+    color: var(--color-text-primary);
+    background-color: transparent;
+}
+
+.btn.text:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>链接按钮</h3>
+        <p>携带跳转链接的按钮。将href的“#”修改为你自己的链接</p>
+        <div class="button_area">
+            <a href="#" class="btn link">链接按钮</a>
+            <br />
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn link"&gt;链接按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.link {
+    color: var(--color-primary);
+    background-color: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn.link:hover {
+    color: var(--color-primary-hover);
+    text-decoration: none;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>block按钮</h3>
+        <p>按钮宽度依赖于父元素的宽度。</p>
+        <div class="button_area">
+            <button class="btn block primary">主按钮</button>
+            <br />
+            <button class="btn block secondary">次按钮</button>
+            <br />
+            <button class="btn block dashed">虚线按钮</button>
+            <br />
+            <button class="btn block text">文本按钮</button>
+            <br />
+            <a href="#" class="btn block link">链接按钮</a>
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn primary"&gt;主按钮&lt;/button&gt;
+&lt;button class="btn secondary"&gt;次按钮&lt;/button&gt;
+&lt;button class="btn dashed"&gt;虚线按钮&lt;/button&gt;
+&lt;button class="btn text"&gt;文本按钮&lt;/button&gt;
+&lt;button class="btn link"&gt;链接按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.block {
+    display: block;
+    width: 100%;
+}
+
+.btn.primary {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+}
+
+.btn.primary:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary-hover);
+    text-decoration: none;
+}
+
+.btn.secondary {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary);
+}
+
+.btn.secondary:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+    text-decoration: none;
+}
+
+.btn.dashed {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary);
+    border-style: dashed;
+}
+
+.btn.dashed:hover {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+    text-decoration: none;
+}
+
+.btn.text {
+    color: var(--color-text-primary);
+    background-color: transparent;
+}
+
+.btn.text:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.btn.link {
+    color: var(--color-primary);
+    background-color: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn.link:hover {
+    color: var(--color-primary-hover);
+    text-decoration: none;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+        <h3>禁用状态</h3>
+        <p>按钮不可操作的状态。</p>
+        <div class="button_area">
+            <button class="btn primary_disabled">主按钮</button>
+            <button class="btn secondary_disabled">次按钮</button>
+            <button class="btn dashed_disabled">虚线按钮</button>
+            <button class="btn text_disabled">文本按钮</button>
+            <a href="#" class="btn link_disabled">链接按钮</a>
+            <br />
+            <br />
+            <a href="javascript:void(0)" class="show_code">显示代码</a>
+            <div class="code_area">
+                <pre><code>
+&lt;button class="btn primary_disabled"&gt;主按钮&lt;/button&gt;
+&lt;button class="btn secondary_disabled"&gt;次按钮&lt;/button&gt;
+&lt;button class="btn dashed_disabled"&gt;虚线按钮&lt;/button&gt;
+&lt;button class="btn text_disabled"&gt;文本按钮&lt;/button&gt;
+&lt;button class="btn link_disabled"&gt;链接按钮&lt;/button&gt;
+&lt;style&gt;
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn.primary_disabled {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary-hover);
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.btn.secondary_disabled {
+    color: var(--color-primary-hover);
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary-hover);
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.btn.dashed_disabled {
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.btn.text_disabled {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+.btn.link_disabled {
+    color: var(--color-primary-hover);
+    text-decoration: none;
+    cursor: not-allowed;
+    box-sizing: border-box;
+}
+&lt;/style&gt;
+                </code></pre>
+            </div>
+        </div>
+        <br />
+    </main>
+    <script src="../js/showCode.js"></script>
+</body>
+
+</html>
