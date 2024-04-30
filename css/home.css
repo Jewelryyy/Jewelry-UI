@@ -55,6 +55,11 @@ header a {
     text-decoration: none;
 }
 
+.container_sidebar a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-neutral-light);
+}
+
 .container_main {
     /* 占据剩余的宽度 */
     flex: 1;
