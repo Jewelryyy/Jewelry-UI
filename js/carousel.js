@@ -20,3 +20,8 @@ function updateCarousel() {
     var offset = -currentIndex * carousel.offsetWidth;
     carouselList.style.transform = 'translateX(' + offset + 'px)';
 }
+
+// 自动播放
+var autoplayInterval = setInterval(function () {
+    nextButton.click();
+}, 3000); // 每3秒自动播放下一张
