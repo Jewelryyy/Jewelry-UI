@@ -1,4 +1,4 @@
-document.querySelectorAll('.navigation > ul > li').forEach(function (li) {
+document.querySelectorAll('.nav-item.toSub').forEach(function (li) {
     li.addEventListener('click', function (event) {
         event.stopPropagation();
         var subMenu = document.getElementById('sub-menu');
